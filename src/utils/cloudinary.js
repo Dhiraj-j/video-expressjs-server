@@ -20,8 +20,9 @@ const uploadOnCloudinary = async (file) => {
     return res;
   } catch (error) {
     console.log("TCL: uploadOnCloudinary -> error", error);
-    fs.unlinkSync(file); // delete file from local storage
     return null;
+  } finally {
+    fs.unlinkSync(file); // delete file from local storage
   }
 };
 
