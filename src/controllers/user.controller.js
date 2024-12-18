@@ -332,6 +332,11 @@ const getWathHistory = asyncHandler(async (req, res) => {
         ],
       },
     },
+    {
+      $project: {
+        watchHistory: 1,
+      },
+    },
   ]);
 
   return res
